@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../layout/event-organizer/header') %>
+
+    <title>Event Saya</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('../layout/event-organizer/sidebar') %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Edit Event</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item">Event Saya</li>
+                  <li class="breadcrumb-item active">Edit Event</li>
+                </ol>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- /.container-fluid -->
+          <div class="container-fluid">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fa-regular fa-calendar"></i>
+                  Edit Event
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <form action="#" method="post">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="posterEvent">Poster Event</label>
+                    <div class="profile-pic-div">
+                      <img
+                        src="/img/poster.png"
+                        id="photo"
+                        class="img-fluid d-block mx-auto"
+                      />
+                      <input type="file" id="file" />
+                      <label for="file" id="uploadBtn">Pilih Poto</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="kategori">Kategori Event</label>
+                    <select
+                      id="kategori"
+                      class="custom-select form-control"
+                      required
+                    >
+                      <option disabled>Pilih Kategori</option>
+                      <option selected>Lomba</option>
+                      <option>Event</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="namaEvent">Nama Event</label>
+                    <input
+                      type="text"
+                      id="namaEvent"
+                      class="form-control"
+                      value="Jakreatifest"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="deskripsiEvent">Deskripsi Event</label>
+                    <textarea
+                      id="deskripsiEvent"
+                      class="form-control"
+                      required
+                      rows="4"
+                    >
+ini lomba asik asikk</textarea
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="benefitEvent">Benefit Event</label>
+                    <textarea
+                      id="benefitEvent"
+                      class="form-control"
+                      required
+                      rows="4"
+                    >
+1. syahadat
+2. sholat</textarea
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="tanggalEvent">Tanggal Event</label>
+                    <input
+                      type="date"
+                      id="tanggalEvent"
+                      class="form-control"
+                      value="2018-07-22"
+                      required
+                    />
+                  </div>
+                  <!-- 
+                  <div class="form-group custom-control custom-checkbox">
+                    <input
+                      class="custom-control-input"
+                      type="checkbox"
+                      id="checkPrasyarat"
+                      value="eligibility"
+                    />
+                    <label for="checkPrasyarat" class="custom-control-label"
+                      >Prasyarat Event</label
+                    >
+                  </div>
+                  <div class="form-group d-none" id="containerPrasyarat">
+                    <label for="prasyaratEvent">Jumlah Prasyarat Event</label>
+                    <input
+                      type="number"
+                      id="prasyaratEvent"
+                      class="form-control"
+                      min="0"
+                      max="5"
+                      required
+                    />
+                  </div> -->
+                  <div class="form-group" id="containerAddPrasyarat">
+                    <label for="namaPrasyarat 1">Nama Prasyarat 1</label>
+                    <input
+                      type="text"
+                      id="namaPrasyarat 1"
+                      class="form-control"
+                      value="Upload ig"
+                      required
+                    />
+                  </div>
+                  <div class="form-group" id="containerAddPrasyarat">
+                    <label for="namaPrasyarat 2">Nama Prasyarat 2</label>
+                    <input
+                      type="text"
+                      id="namaPrasyarat 2"
+                      class="form-control"
+                      value="follow wa"
+                      required
+                    />
+                  </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <a
+                    class="btn-default btn"
+                    data-toggle="modal"
+                    data-target="#cancelModal-event"
+                    >Cancel</a
+                  >
+                  <button type="submit" class="btn-success btn float-right">
+                    Edit Event
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- Modal cancel-->
+      <div
+        class="fade modal"
+        id="cancelModal-event"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="cancelModal-eventTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Cancel Edit Event
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Apakah Kamu Yakin ingin Menghapus Perubahan ini?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn-secondary btn"
+                data-dismiss="modal"
+              >
+                Batal
+              </button>
+              <a type="button" href="/event-eo" class="btn-danger btn">Yakin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../layout/event-organizer/footer') %>
+    </div>
+    <%- include('../layout/event-organizer/script') %>
+  </body>
+</html>

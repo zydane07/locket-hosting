@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../layout/admin-layout/header') %>
+
+    <title>Dashboard Admin</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('../layout/admin-layout/sidebar') %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Dashboard</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- /.container-fluid -->
+          <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-lightblue">
+                  <div class="inner">
+                    <h3>150</h3>
+                    <p>Participants</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fas fa-user-check"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >informasi lebih lanjut
+                    <i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-fuchsia">
+                  <div class="inner">
+                    <h3>31</h3>
+
+                    <p>Event Organizer</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >informasi lebih lanjut
+                    <i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-indigo">
+                  <div class="inner">
+                    <h3>44</h3>
+
+                    <p>Event</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-solid fa-calendar"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >informasi lebih lanjut
+                    <i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- statistik event berdasarkan kategori -->
+                <div class="card card-primary card-outline">
+                  <div class="card-header border-0">
+                    <h3 class="card-title">
+                      <i class="far fa-chart-bar"></i>
+                      Statistik Semua Event Berdasarkan Kategori
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <div id="kategoriEvent" style="height: 300px"></div>
+                  </div>
+                  <!-- /.card-body-->
+                </div>
+                <!-- /.card -->
+              </div>
+              <div class="col-md-6">
+                <!-- event tersedia -->
+                <div class="card card-outline card-primary">
+                  <div class="card-header border-0">
+                    <h3 class="card-title">
+                      <i class="fa-regular fa-calendar"></i>
+                      Event Tersedia
+                    </h3>
+                  </div>
+                  <div class="card-body table-responsive p-0">
+                    <table class="table-striped table-valign-middle table">
+                      <thead>
+                        <tr>
+                          <th>Nama Event</th>
+                          <th>Kategori</th>
+                          <th>EO</th>
+                          <th>Tanggal Event</th>
+                          <th>Peserta</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Jakarta Kreatifest 2022</td>
+                          <td>Lomba</td>
+                          <td>Ufo Veteran</td>
+                          <td>2021-12-17</td>
+                          <td>120 Peserta</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+
+      <%- include('../layout/admin-layout/footer') %>
+    </div>
+    <%- include('../layout/admin-layout/script') %>
+  </body>
+</html>

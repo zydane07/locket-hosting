@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Profile Saya</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+
+    <div class="sizing-content font-montserrat mt-14 bg-light-200">
+      <div class="grid-cols-3 gap-6 lg:grid">
+        <!-- foto profile -->
+        <div class="container-profile mb-4 lg:mb-0">
+          <form action="">
+            <div class="flex justify-center">
+              <div class="profile-pict-container relative overflow-hidden">
+                <img
+                  src="/img/Poto PP.png"
+                  alt="Foto Profil"
+                  class="h-36 object-cover"
+                  id="photo-profile"
+                />
+                <input type="file" id="file" class="hidden" />
+                <label
+                  for="file"
+                  id="upload-foto-profile"
+                  class="btn-change-pict delay-15 cursor-pointer transition ease-in-out hover:opacity-100"
+                >
+                  Pilih Poto
+                </label>
+              </div>
+            </div>
+          </form>
+          <div class="mt-2 text-center text-black">
+            <h1 class="text-lg font-bold"><%= data.data.name %></h1>
+            <h5><%= data.data.status %></h5>
+          </div>
+        </div>
+        <!-- foto profile -->
+
+        <!-- akun saya -->
+        <div class="container-profile col-span-2 mb-4 lg:mb-0">
+          <div class="mb-4">
+            <i class="fa-solid fa-user mr-2 inline-block text-2xl"></i>
+            <span class="text-xl font-bold">Tentang Saya</span>
+          </div>
+          <div class="text-gray-700">
+            <div class="grid text-sm lg:grid-cols-2 lg:gap-2">
+              <div class="grid grid-cols-2">
+                <div class="px-2 py-2 font-semibold lg:py-1">Email</div>
+                <div class="px-2 py-2 lg:py-1">
+                  <a href="mailto:zydane@gmal.com"><%= data.data.email %> </a>
+                </div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-2 py-2 font-semibold lg:py-1">No. Handphone</div>
+                <div class="px-2 py-2 lg:py-1">
+                  <%= data.data.phone_number %>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2">
+                <div class="px-2 py-2 font-semibold lg:py-1">Nama</div>
+                <div class="px-2 py-2 lg:py-1"><%= data.data.name %></div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-2 py-2 font-semibold lg:py-1">Jenis Kelamin</div>
+                <div class="px-2 py-2 lg:py-1"><%= data.data.gender %></div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-2 py-2 font-semibold lg:py-1">Kata Sandi</div>
+                <div class="px-2 py-2 lg:py-1">**********</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-2 py-2 font-semibold lg:py-1">Tanggal Lahir</div>
+                <div class="px-2 py-2 lg:py-1"><%= data.data.birth_date %></div>
+              </div>
+            </div>
+            <button
+              class="focus:shadow-outline hover:shadow-xs my-4 block w-full rounded-lg p-3 text-sm font-semibold text-secondary-100 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+              data-bs-toggle="modal"
+              data-bs-target="#editProfile"
+            >
+              Edit Profile
+            </button>
+          </div>
+        </div>
+        <!-- akun saya -->
+
+        <!-- akun di subscribe -->
+        <div class="container-profile col-span-3 lg:mb-36">
+          <div class="mb-4">
+            <i class="fa-solid fa-users mr-2 inline-block text-2xl"></i>
+            <span class="text-xl font-bold">EO Diikuti</span>
+          </div>
+          <% subscribedEO.data.forEach(eo => { %>
+          <div class="eo-title mb-2 justify-between text-black sm:mb-4">
+            <div class="flex items-start gap-2">
+              <img
+                src="img/logo EO.png"
+                alt="Logo EO"
+                class="h-12 rounded-full border-2 border-primary-100"
+              />
+              <div>
+                <h5 class="text-base font-bold capitalize">
+                  <%= eo.user.name %>
+                </h5>
+                <a
+                  class="cursor-pointer text-sm tracking-wider text-secondary-100 hover:font-bold"
+                  >Lihat Semua event</a
+                >
+              </div>
+            </div>
+            <div>
+              <button
+                type="submit"
+                id="subscribeEo"
+                class="btn-light-2 subscribe transition-btn-light text-xs tracking-widest"
+              >
+                Subscribed
+              </button>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <!-- akun di subscribe -->
+      </div>
+
+      <!-- modals edit profile -->
+      <div
+        class="font-montserrat fade modal fixed top-0 left-0 hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+        id="editProfile"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered pointer-events-none relative w-auto"
+        >
+          <div
+            class="modal-content pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none"
+          >
+            <div
+              class="modal-header flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-gray-200 p-4"
+            >
+              <h5
+                class="text-xl font-medium leading-normal text-gray-800"
+                id="exampleModalLabel"
+              >
+                Edit Profile
+              </h5>
+            </div>
+            <div class="modal-body relative p-4">
+              <form action="#" method="">
+                <!-- Email input -->
+                <div class="mb-6">
+                  <div class="font-montserrat form-floating relative w-full">
+                    <input
+                      type="text"
+                      class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                      placeholder="Masukkan Email"
+                      id="email"
+                      value="<%= data.data.email  %>"
+                    />
+                    <label for="floatingInput" class="text-gray-400"
+                      >Masukkan Email</label
+                    >
+                  </div>
+                </div>
+
+                <!-- Nama Input -->
+                <div class="mb-6">
+                  <div class="font-montserrat form-floating relative w-full">
+                    <input
+                      type="text"
+                      class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                      placeholder="Masukkan Nama"
+                      id="name"
+                      value="<%= data.data.name  %>"
+                    />
+                    <label for="floatingInput" class="text-gray-400"
+                      >Masukkan Nama</label
+                    >
+                  </div>
+                </div>
+
+                <!-- status -->
+                <div class="mb-6">
+                  <select
+                    id="status"
+                    class="font-montserrat transition-form form-select w-full appearance-none rounded-xl border bg-green-50 bg-clip-padding bg-no-repeat py-4 px-3 text-black"
+                  >
+                    <option>Status</option>
+                    <option value="pelajar">Pelajar</option>
+                    <option value="mahasiswa">Mahasiswa</option>
+                    <option value="umum">Umum</option>
+                  </select>
+                </div>
+
+                <!-- Password input -->
+                <div class="mb-6">
+                  <div class="font-montserrat form-floating relative w-full">
+                    <input
+                      type="password"
+                      class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                      placeholder="Masukkan Password"
+                      id="password"
+                      value="*******"
+                    />
+                    <label for="floatingInput" class="text-gray-400"
+                      >Masukkan Password</label
+                    >
+                  </div>
+                </div>
+
+                <!-- no hp input -->
+                <div class="mb-6">
+                  <div class="font-montserrat form-floating relative w-full">
+                    <input
+                      type="text"
+                      class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                      placeholder="Masukkan No. Telepon"
+                      id="no-phone"
+                      value="<%= data.data.phone_number %> "
+                    />
+                    <label for="floatingInput" class="text-gray-400"
+                      >Masukkan No. Telepon</label
+                    >
+                  </div>
+                </div>
+
+                <!-- gender -->
+                <div class="mb-6">
+                  <select
+                    id="gender"
+                    class="font-montserrat transition-form form-select w-full appearance-none rounded-xl border bg-green-50 bg-clip-padding bg-no-repeat py-4 px-3 text-black"
+                  >
+                    <option>Jenis Kelamin</option>
+                    <option value="lk">Laki-Laki</option>
+                    <option value="pr">Perempuan</option>
+                  </select>
+                </div>
+
+                <!-- tanggal lahir -->
+                <div class="mb-6">
+                  <div
+                    class="font-montserrat datepicker form-floating relative w-full"
+                    data-mdb-toggle-button="false"
+                  >
+                    <input
+                      type="text"
+                      class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                      placeholder="Masukkan Tanggal Lahir"
+                      id="tanggal-lahir"
+                      data-mdb-toggle="datepicker"
+                      value="<%= data.data.birth_date %> "
+                    />
+                    <label for="floatingInput" class="text-gray-400"
+                      >Masukkan Tanggal Lahir</label
+                    >
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t border-gray-200 p-4"
+            >
+              <button
+                type="button"
+                class="inline-block rounded bg-red-600 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg"
+                data-bs-dismiss="modal"
+              >
+                Batal
+              </button>
+              <button
+                type="button"
+                class="ml-1 inline-block rounded bg-primary-100 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-400 hover:shadow-lg focus:bg-primary-400 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-500 active:shadow-lg"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('layout/footer') %>
+    <script src="/js/profile.min.js" type="module"></script>
+  </body>
+</html>

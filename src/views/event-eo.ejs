@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Semua Event</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+
+    <!-- eo logo -->
+    <div class="sizing-content mt-14 bg-light-200">
+      <div class="eo-title mb-4 justify-start lg:gap-6">
+        <img
+          src="img/logo EO.png"
+          alt="Logo EO"
+          class="h-16 rounded-full border-2 border-primary-100 lg:h-24"
+        />
+        <div>
+          <h5 class="text-lg font-bold capitalize lg:mb-2 lg:text-2xl">
+            ufo veteran jakarta
+          </h5>
+          <button
+            type="submit"
+            id="subscribeEo"
+            class="btn-light-2 subscribe transition-btn-light text-xs tracking-widest"
+          >
+            Subscribed
+          </button>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-justify text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+          expedita repellat ducimus recusandae aperiam beatae, exercitationem
+          vitae corporis aliquid at eos fuga vero quaerat culpa praesentium id
+          alias quibusdam veniam eum molestiae velit, fugit ut ipsa? Eveniet
+          neque laborum distinctio, deleniti, quia qui saepe cupiditate placeat
+          recusandae beatae eaque facere.
+        </h4>
+      </div>
+    </div>
+    <!-- eo logo -->
+
+    <!-- semua event -->
+    <div class="sizing-content">
+      <div class="text-style-header text-center">
+        <h1 class="text-header">Event dan lomba tersedia</h1>
+      </div>
+      <div
+        class="mt-6 grid-cols-3 items-center justify-center gap-6 md:mt-12 lg:grid"
+      >
+        <div class="card-event transition-card-event relative mb-6">
+          <a href="/event-detail" class="">
+            <img src="img/poster.png" alt="event 1" class="img-event" />
+            <div class="px-4 py-6 text-black">
+              <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+              <div class="flex gap-3 text-xs">
+                <div>
+                  <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                  <span>22 Oktober 2022</span>
+                </div>
+                <div class="">
+                  <i class="fa-solid fa-location-dot mr-1 inline-block"></i>
+                  <span>Zoom Meeting</span>
+                </div>
+              </div>
+              <div class="mt-2 text-justify text-xs">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maxime ipsam porro quos quia officia
+                </p>
+              </div>
+              <div class="badge absolute top-0 mt-2">
+                <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                <span class="">Event</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- semua event -->
+
+    <%- include('layout/footer') %>
+  </body>
+</html>

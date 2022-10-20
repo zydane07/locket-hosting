@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../layout/event-organizer/header') %>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('../layout/event-organizer/sidebar') %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Dashboard</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- /.container-fluid -->
+          <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-lightblue">
+                  <div class="inner">
+                    <h3>15</h3>
+                    <p>Events</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-solid fa-calendar"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >informasi lebih lanjut
+                    <i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-fuchsia">
+                  <div class="inner">
+                    <h3>31</h3>
+
+                    <p>Subscribers</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >informasi lebih lanjut
+                    <i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-indigo">
+                  <div class="inner">
+                    <h3>44</h3>
+
+                    <p>Komentar</p>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-solid fa-comments"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"
+                    >informasi lebih lanjut
+                    <i class="fas fa-arrow-circle-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <!-- statistik event berdasarkan kategori -->
+                <div class="card card-primary card-outline">
+                  <div class="card-header border-0">
+                    <h3 class="card-title">
+                      <i class="far fa-chart-bar"></i>
+                      Statistik Event Berdasarkan Kategori
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <div id="kategoriEvent" style="height: 300px"></div>
+                  </div>
+                  <!-- /.card-body-->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- subscribers -->
+                <div class="card card-outline card-primary">
+                  <div class="card-header border-0">
+                    <h3 class="card-title">
+                      <i class="fa-solid fa-users"></i>
+                      Subscribers
+                    </h3>
+                  </div>
+                  <div class="card-body table-responsive p-0">
+                    <table class="table-striped table-valign-middle table">
+                      <thead>
+                        <tr>
+                          <th>Nama Subscribers</th>
+                          <th>Status</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="align-items-center d-flex justify-content-start user-block"
+                          >
+                            <img
+                              class="img-circle img-bordered-sm"
+                              src="/img/Poto PP.png"
+                              alt="user image"
+                            />
+                            <span class="username">Jonathan Burke Jr. </span>
+                          </td>
+                          <td>Mahasiswa</td>
+                          <td>
+                            <a
+                              class="btn-danger btn-sm btn text-white"
+                              data-toggle="modal"
+                              data-target="#deletemodal-subscribers"
+                            >
+                              <i class="fas fa-trash"> </i>
+                              Hapus
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                  <!-- Modal Delete-->
+                  <div
+                    class="fade modal"
+                    id="deletemodal-subscribers"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="deletemodal-subscribersTitle"
+                    aria-hidden="true"
+                  >
+                    <div
+                      class="modal-dialog modal-dialog-centered"
+                      role="document"
+                    >
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">
+                            Hapus Subscribers
+                          </h5>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Apakah Kamu Yakin ingin Menghapus Subscribers ini?
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn-secondary btn"
+                            data-dismiss="modal"
+                          >
+                            Batal
+                          </button>
+                          <button type="button" class="btn-danger btn">
+                            Hapus
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <!-- event tersedia -->
+                <div class="card card-outline card-primary">
+                  <div class="card-header border-0">
+                    <h3 class="card-title">
+                      <i class="fa-regular fa-calendar"></i>
+                      Event Tersedia
+                    </h3>
+                  </div>
+                  <div class="card-body table-responsive p-0">
+                    <table class="table-striped table-valign-middle table">
+                      <thead>
+                        <tr>
+                          <th>Nama Event</th>
+                          <th>Kategori</th>
+                          <th>Jumlah Pendaftar</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Jakarta Kreatifest 2022</td>
+                          <td>Lomba</td>
+                          <td>15 peserta</td>
+                          <td>
+                            <a class="btn-success bg-olive btn-sm btn" href="#">
+                              <i class="fas fa-folder"> </i>
+                              Detail
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Jakarta Kreatifest 2022</td>
+                          <td>Event</td>
+                          <td>15 peserta</td>
+                          <td>
+                            <a class="btn-success bg-olive btn-sm btn" href="#">
+                              <i class="fas fa-folder"> </i>
+                              Detail
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+
+      <%- include('../layout/event-organizer/footer') %>
+    </div>
+    <%- include('../layout/event-organizer/script') %>
+  </body>
+</html>

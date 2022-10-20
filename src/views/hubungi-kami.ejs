@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Hubungi Kami</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+
+    <!-- hubungi kami -->
+    <div class="sizing-content mt-14">
+      <div class="lg:px-32 2xl:lg:px-80">
+        <div class="text-style-header mb-8 text-center">
+          <h1 class="text-header mb-2 text-2xl">Hubungi Kami</h1>
+          <p>
+            Silakan hubungi kami melalui kontak di bawah ini, tim kami akan
+            menghubungi Anda kembali secepat mungkin.
+          </p>
+        </div>
+        <div>
+          <form action="#" class="">
+            <!-- Email input -->
+            <div class="mb-6">
+              <div class="font-montserrat form-floating relative w-full">
+                <input
+                  type="text"
+                  class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                  placeholder="Masukkan Email"
+                  id="email"
+                />
+                <label for="floatingInput" class="text-gray-400"
+                  >Masukkan Email</label
+                >
+              </div>
+            </div>
+
+            <!-- Nama Input -->
+            <div class="mb-6">
+              <div class="font-montserrat form-floating relative w-full">
+                <input
+                  type="text"
+                  class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                  placeholder="Masukkan Nama"
+                  id="name"
+                />
+                <label for="floatingInput" class="text-gray-400"
+                  >Masukkan Nama</label
+                >
+              </div>
+            </div>
+
+            <!-- subject -->
+            <div class="mb-6">
+              <div class="font-montserrat form-floating relative w-full">
+                <input
+                  type="text"
+                  class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                  placeholder="Masukkan Suject"
+                  id="subject"
+                />
+                <label for="floatingInput" class="text-gray-400"
+                  >Masukkan Suject</label
+                >
+              </div>
+            </div>
+            <!-- pertanyaan -->
+            <div class="mb-4">
+              <textarea
+                rows="5"
+                class="w-full rounded-xl border bg-green-50 p-2 text-sm focus:border-secondary-100 focus:bg-light-100 focus:text-secondary-100 focus:outline-none"
+                placeholder="Tanyakan pertanyaanmu tentang event/lomba ini"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-primary-transition">
+              Kirim Pertanyaan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- hubungi kami -->
+
+    <!-- detail alamat -->
+    <div
+      class="grid-cols-3 gap-6 px-10 md:grid md:px-24 lg:px-28 lg:pb-20 xl:px-36"
+    >
+      <div class="mb-10 text-center">
+        <i
+          class="fa-solid fa-envelope mb-4 rounded-md bg-slate-200 p-4 text-4xl text-gray-600"
+        ></i>
+        <h2 class="text-lg font-bold text-black">Email Kami:</h2>
+        <p class="tcsm mb-6 text-gray-500">
+          Email kami untuk pertanyaan umum, termasuk peluang pemasaran dan
+          kemitraan.
+        </p>
+        <a
+          href="mailto:crystal.locket@gmail.com"
+          class="font-bold text-secondary-100"
+        >
+          crystal.locket@gmail.com</a
+        >
+      </div>
+      <div class="mb-10 text-center">
+        <i
+          class="fa-solid fa-phone mb-4 rounded-md bg-slate-200 p-4 text-4xl text-gray-600"
+        ></i>
+        <h2 class="text-lg font-bold text-black">Telepon:</h2>
+        <p class="tcsm mb-6 text-gray-500">
+          Hubungi kami untuk berbicara dengan anggota tim kami. Kami selalu
+          senang membantu.
+        </p>
+        <p class="font-bold text-secondary-100">0812-9681-4536</p>
+      </div>
+      <div class="mb-10 text-center">
+        <i
+          class="fa-solid fa-location-dot mb-4 rounded-md bg-slate-200 p-4 text-4xl text-gray-600"
+        ></i>
+        <h2 class="text-lg font-bold text-black">Alamat:</h2>
+        <p class="tcsm mb-6 text-gray-500">
+          Jalan RS. Fatmawati Raya, Pd. Labu, Kec. Cilandak, Kota Depok, Jawa
+          Barat 12450
+        </p>
+        <a
+          class="font-bold text-secondary-100"
+          href="https://goo.gl/maps/2HysUCU1cZmZFgvZA"
+          >Lihat Maps</a
+        >
+      </div>
+    </div>
+    <!-- detail alamat -->
+
+    <!-- FAQ -->
+    <div class="sizing-content bg-light-200">
+      <div class="text-style-header mb-8 text-center">
+        <h1 class="text-header mb-2 text-2xl">frequently asked questions</h1>
+        <p>
+          Semua yang harus kamu tahu mengenai
+          <span class="font-bold text-secondary-100">Lockét</span>
+        </p>
+      </div>
+      <div class="grid-cols-3 gap-6 lg:grid">
+        <div class="flex items-center justify-center">
+          <img
+            src="/img/faq.png"
+            alt="FAQ Image"
+            class="h-80 object-cover 2xl:h-96"
+          />
+        </div>
+
+        <div class="col-span-2">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item border border-gray-200 bg-white">
+              <h2 class="accordion-header mb-0" id="headingOne">
+                <button
+                  class="accordion-button relative flex w-full items-center rounded-none border-0 bg-white py-4 px-5 text-left text-base text-gray-800 transition focus:outline-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Pertanyaan #1
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="collapse show accordion-collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body py-4 px-5">
+                  <strong>This is the first item's accordion body.</strong> It
+                  is shown by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border border-gray-200 bg-white">
+              <h2 class="accordion-header mb-0" id="headingTwo">
+                <button
+                  class="accordion-button collapsed relative flex w-full items-center rounded-none border-0 bg-white py-4 px-5 text-left text-base text-gray-800 transition focus:outline-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Pertanyaan #2
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="collapse accordion-collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body py-4 px-5">
+                  <strong>This is the second item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item border border-gray-200 bg-white">
+              <h2 class="accordion-header mb-0" id="headingThree">
+                <button
+                  class="accordion-button collapsed relative flex w-full items-center rounded-none border-0 bg-white py-4 px-5 text-left text-base text-gray-800 transition focus:outline-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Pertanyaan #3
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="collapse accordion-collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body py-4 px-5">
+                  <strong>This is the third item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQ -->
+
+    <%- include('layout/footer') %>
+  </body>
+</html>

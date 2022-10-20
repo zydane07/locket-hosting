@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Login Page</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/login-header') %>
+
+    <div
+      class="font-montserrat relative grid h-screen grid-cols-1 items-center justify-center lg:grid-cols-3"
+    >
+      <div class="sizing-content col-span-2 mb-28 lg:mb-0">
+        <!-- header -->
+        <div class="mb-6 text-center">
+          <h1 class="text-header text-style-header mb-2 text-3xl">
+            Selamat Datang Kembali!
+          </h1>
+          <p class="text-sm">
+            Silahkan masukkan email dan kata sandi untuk masuk
+          </p>
+        </div>
+        <!-- header -->
+
+        <form action="#" method="">
+          <!-- Email input -->
+          <div class="mb-6">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="text"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan Email"
+                id="email"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan Email</label
+              >
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="mb-2">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="password"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan Password"
+                id="password"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan Password</label
+              >
+            </div>
+          </div>
+
+          <div class="mb-4 text-right text-sm">
+            <a href="/lupa-pass-1" class="text-primary-100 hover:font-bold"
+              >lupa kata sandi?</a
+            >
+          </div>
+
+          <button
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            class="bg-gradient-2 btn-login btn-login-transition mb-2"
+            id="loginBtn"
+          >
+            Masuk
+          </button>
+
+          <div class="flex justify-center gap-2 text-sm">
+            <p>Belum punya akun?</p>
+            <a href="/register" class="text-primary-100 hover:font-bold"
+              >Daftar disini</a
+            >
+          </div>
+        </form>
+      </div>
+      <%- include('layout/login-side') %>
+    </div>
+    <%- include('layout/login-footer') %>
+    <script src="/js/login.min.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Homepage</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+    <!-- Jumbotron -->
+    <div
+      id="carouselJumbotron"
+      class="slide carousel relative mt-14"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner relative w-full overflow-hidden text-center">
+        <div class="carousel-show-text">
+          <div class="mb-2 justify-center md:mb-4 lg:mb-6">
+            <h5
+              class="text-xl font-bold uppercase text-light-100 md:text-4xl lg:mb-2"
+            >
+              Discover events that match your passions
+            </h5>
+            <p class="uppercase tracking-widest text-light-200 md:text-2xl">
+              and make your event globally
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <div class="w-5/6 md:w-3/4 lg:w-1/2">
+              <div class="input-group relative mb-4 flex w-full items-stretch">
+                <input
+                  type="search"
+                  class="relative m-0 block w-full min-w-0 flex-auto rounded-xl border border-solid bg-light-200 bg-clip-padding px-3 py-3 text-base font-normal text-secondary-100 transition ease-in-out focus:border-secondary-100 focus:bg-green-50 focus:text-secondary-100 focus:outline-none"
+                  placeholder="Cari Lomba & Event yang kamu inginkan"
+                  aria-label="Search"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="transition-btn btn inline-block items-center rounded-xl bg-teal-700 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md active:bg-teal-900 active:shadow-lg"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="search"
+                    class="w-4"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-img active carousel-item relative">
+          <img src="/img/jumbotron_1.png" alt="" class="w-full" />
+          <div
+            class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-gradient-to-r from-primary-100 to-secondary-100 opacity-40"
+          ></div>
+        </div>
+        <div class="carousel-img carousel-item relative">
+          <img src="img/jumbotron-2.png" alt="" class="w-full" />
+          <div
+            class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-gradient-to-r from-primary-100 to-secondary-100 opacity-40"
+          ></div>
+        </div>
+        <div class="carousel-img carousel-item relative">
+          <img src="img/jumbotron-3.png" alt="" class="w-full" />
+          <div
+            class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-gradient-to-r from-primary-100 to-secondary-100 opacity-40"
+          ></div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
+        type="button"
+        data-bs-target="#carouselJumbotron"
+        data-bs-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon inline-block bg-no-repeat"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
+        type="button"
+        data-bs-target="#carouselJumbotron"
+        data-bs-slide="next"
+      >
+        <span
+          class="carousel-control-next-icon inline-block bg-no-repeat"
+          aria-hidden="true"
+        ></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- event terbaru -->
+    <div class="sizing-content">
+      <div class="text-style-header text-center">
+        <h1 class="text-header mb-2">Event Terbaru</h1>
+        <p>Yuk ikuti event terbaru sesuai passionmu disini!</p>
+      </div>
+      <div class="mt-6 grid-cols-3 gap-6 md:mt-12 lg:grid">
+        <% if (events.length > 0) { %> <% events.forEach(event =>{ %>
+        <div class="card-event transition-card-event relative mb-6">
+          <a href="" class="">
+            <img
+              src="<%= event.image.secure_url %>"
+              alt="event 1"
+              class="img-event"
+            />
+            <div class="px-4 py-6 text-black">
+              <h1 class="text-lg font-bold uppercase"><%= event.name %></h1>
+              <div class="flex gap-3 text-xs">
+                <div>
+                  <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                  <span><%= event.date_time %> </span>
+                </div>
+                <div class="">
+                  <i class="fa-solid fa-location-dot mr-1 inline-block"></i>
+                  <span>Zoom Meeting</span>
+                </div>
+              </div>
+              <div class="mt-2 text-justify text-xs">
+                <p><%= event.description %></p>
+              </div>
+              <div class="badge absolute top-0 mt-2">
+                <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                <span class=""><%= event.category.name %></span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <% }) } %>
+      </div>
+      <% if (events.length == 0) { %>
+      <div class="mb-6 flex justify-center">
+        <img
+          src="/icon/empty.svg"
+          alt="Lomba Kosong"
+          class="h-64 object-cover"
+        />
+      </div>
+      <p class="mb-6 text-center text-xl font-bold text-black">
+        Belum ada Event/Lomba
+      </p>
+      <% } %>
+      <div class="mt-10 text-center lg:mt-4">
+        <a href="#" class="btn-primary btn-primary-transition">Semua Event</a>
+      </div>
+    </div>
+    <!-- event terbaru -->
+
+    <!-- Lomba Terbaru -->
+    <div class="sizing-content">
+      <div class="text-style-header text-center">
+        <h1 class="text-header mb-2">Lomba TERBARU</h1>
+        <p>
+          Yuk salurkan bakat dan minatmu dengan mengikuti lomba-lomba berikut!
+        </p>
+      </div>
+      <div class="mt-6 grid-cols-3 gap-6 md:mt-12 lg:grid">
+        <% if (lomba.length > 0) { %> <% lomba.forEach(lombas =>{ %>
+        <div class="card-event transition-card-event relative mb-6">
+          <a href="" class="">
+            <img
+              src="<%= lombas.image.secure_url %>"
+              alt="event 1"
+              class="img-event"
+            />
+            <div class="px-4 py-6 text-black">
+              <h1 class="text-lg font-bold uppercase"><%= lombas.name %></h1>
+              <div class="flex gap-3 text-xs">
+                <div>
+                  <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                  <span><%= lombas.date_time %> </span>
+                </div>
+                <div class="">
+                  <i class="fa-solid fa-location-dot mr-1 inline-block"></i>
+                  <span>Zoom Meeting</span>
+                </div>
+              </div>
+              <div class="mt-2 text-justify text-xs">
+                <p><%= lombas.description %></p>
+              </div>
+              <div class="badge absolute top-0 mt-2">
+                <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                <span class=""><%= lombas.category.name %></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <% }) } %>
+      </div>
+      <% if (lomba.length == 0) { %>
+      <div class="mb-6 flex justify-center">
+        <img
+          src="/icon/empty.svg"
+          alt="Lomba Kosong"
+          class="h-64 object-cover"
+        />
+      </div>
+      <p class="mb-6 text-center text-xl font-bold text-black">
+        Belum ada Event/Lomba
+      </p>
+      <% } %>
+      <div class="mt-10 text-center lg:mt-4">
+        <a href="#" class="btn-primary btn-primary-transition">Semua Lomba</a>
+      </div>
+    </div>
+    <!-- Lomba Terbaru -->
+
+    <!-- mengapa locket -->
+    <div class="sizing-content bg-light-200">
+      <div class="text-style-header">
+        <h1 class="text-header mb-2">
+          Mengapa <span class="text-secondary-100">Lockét</span>?
+        </h1>
+      </div>
+      <div class="mt-6 grid-cols-2 gap-6 md:grid lg:grid-cols-4">
+        <div class="mb-6 md:mb-4">
+          <div class="flex items-center justify-center">
+            <img src="icon/benefit 1.svg" alt="benefit 1" class="img-benefit" />
+          </div>
+          <p class="caption-benefit mb-2 text-2xl font-bold text-primary-100">
+            Event yang menarik
+          </p>
+          <p class="caption-benefit">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            vero quis consectetur.
+          </p>
+        </div>
+        <div class="mb-6 md:mb-4">
+          <div class="flex items-center justify-center">
+            <img src="icon/benefit 1.svg" alt="benefit 1" class="img-benefit" />
+          </div>
+          <p class="caption-benefit mb-2 text-2xl font-bold text-primary-100">
+            Event yang menarik
+          </p>
+
+          <p class="caption-benefit">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            vero quis consectetur.
+          </p>
+        </div>
+        <div class="mb-6 md:mb-4">
+          <div class="flex items-center justify-center">
+            <img src="icon/benefit 1.svg" alt="benefit 1" class="img-benefit" />
+          </div>
+          <p class="caption-benefit mb-2 text-2xl font-bold text-primary-100">
+            Event yang menarik
+          </p>
+
+          <p class="caption-benefit">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            vero quis consectetur.
+          </p>
+        </div>
+        <div class="mb-6 md:mb-4">
+          <div class="flex items-center justify-center">
+            <img src="icon/benefit 1.svg" alt="benefit 1" class="img-benefit" />
+          </div>
+          <p class="caption-benefit mb-2 text-2xl font-bold text-primary-100">
+            Event yang menarik
+          </p>
+
+          <p class="caption-benefit">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+            vero quis consectetur.
+          </p>
+        </div>
+      </div>
+
+      <!-- testimonial-->
+      <div class="py-8 lg:pt-20 lg:pb-0">
+        <div class="mb-20 text-center text-gray-800">
+          <h2 class="text-style-header text-header mb-4">Testimonials</h2>
+          <div
+            id="carouselTestimonials"
+            class="slide carousel carousel-dark relative"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner relative w-full overflow-hidden">
+              <div class="active carousel-item relative float-left w-full">
+                <img
+                  class="mx-auto mb-6 rounded-full border-2 border-secondary-100 shadow-lg"
+                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+                  alt="avatar"
+                  style="width: 150px"
+                />
+
+                <div class="flex flex-wrap justify-center">
+                  <div
+                    class="font-montserrat w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12"
+                  >
+                    <h5 class="mb-3 text-lg font-bold">Maria Kate</h5>
+                    <p class="mb-4 font-medium text-gray-700">Participants</p>
+                    <p class="mb-6 text-gray-500">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="quote-left"
+                        class="inline-block w-6 pr-2"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                        ></path>
+                      </svg>
+                      In ac turpis justo. Vivamus auctor quam vitae odio feugiat
+                      pulvinar. Sed semper ligula sed lorem tincidunt dignissim.
+                      Nam sed cursus lectus. Proin non rutrum magna. Proin
+                      gravida, justo et imperdiet tristique, turpis nisi viverra
+                      est, nec posuere ex arcu sit amet erat. Sed a dictum sem.
+                      Duis pretium condimentum nulla.
+                    </p>
+                    <!-- stars -->
+                    <ul class="mb-0 flex justify-center">
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="far"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                          ></path>
+                        </svg>
+                      </li>
+                    </ul>
+                    <!-- stars -->
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item relative float-left w-full">
+                <img
+                  class="mx-auto mb-6 rounded-full border-2 border-secondary-100 shadow-lg"
+                  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+                  alt="avatar"
+                  style="width: 150px"
+                />
+
+                <div class="flex flex-wrap justify-center">
+                  <div
+                    class="font-montserrat w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12"
+                  >
+                    <h5 class="mb-3 text-lg font-bold">Maria Kate</h5>
+                    <p class="mb-4 font-medium text-gray-700">Participants</p>
+                    <p class="mb-6 text-gray-500">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="quote-left"
+                        class="inline-block w-6 pr-2"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                        ></path>
+                      </svg>
+                      In ac turpis justo. Vivamus auctor quam vitae odio feugiat
+                      pulvinar. Sed semper ligula sed lorem tincidunt dignissim.
+                      Nam sed cursus lectus. Proin non rutrum magna. Proin
+                      gravida, justo et imperdiet tristique, turpis nisi viverra
+                      est, nec posuere ex arcu sit amet erat. Sed a dictum sem.
+                      Duis pretium condimentum nulla.
+                    </p>
+                    <!-- stars -->
+                    <ul class="mb-0 flex justify-center">
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                    </ul>
+                    <!-- stars -->
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item relative float-left w-full">
+                <img
+                  class="mx-auto mb-6 rounded-full border-2 border-secondary-100 shadow-lg"
+                  src="img/logo EO.png"
+                  alt="avatar"
+                  style="width: 150px"
+                />
+
+                <div class="flex flex-wrap justify-center">
+                  <div
+                    class="font-montserrat w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12"
+                  >
+                    <h5 class="mb-3 text-lg font-bold">Ufo Veteran</h5>
+                    <p class="mb-4 font-medium text-gray-700">
+                      Event Organizer
+                    </p>
+                    <p class="mb-6 text-gray-500">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="quote-left"
+                        class="inline-block w-6 pr-2"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
+                        ></path>
+                      </svg>
+                      In ac turpis justo. Vivamus auctor quam vitae odio feugiat
+                      pulvinar. Sed semper ligula sed lorem tincidunt dignissim.
+                      Nam sed cursus lectus. Proin non rutrum magna. Proin
+                      gravida, justo et imperdiet tristique, turpis nisi viverra
+                      est, nec posuere ex arcu sit amet erat. Sed a dictum sem.
+                      Duis pretium condimentum nulla.
+                    </p>
+                    <!-- stars -->
+                    <ul class="mb-0 flex justify-center">
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 576 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                          ></path>
+                        </svg>
+                      </li>
+                      <li>
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="star-half-alt"
+                          class="w-4 text-yellow-500"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 536 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M508.55 171.51L362.18 150.2 296.77 17.81C290.89 5.98 279.42 0 267.95 0c-11.4 0-22.79 5.9-28.69 17.81l-65.43 132.38-146.38 21.29c-26.25 3.8-36.77 36.09-17.74 54.59l105.89 103-25.06 145.48C86.98 495.33 103.57 512 122.15 512c4.93 0 10-1.17 14.87-3.75l130.95-68.68 130.94 68.7c4.86 2.55 9.92 3.71 14.83 3.71 18.6 0 35.22-16.61 31.66-37.4l-25.03-145.49 105.91-102.98c19.04-18.5 8.52-50.8-17.73-54.6zm-121.74 123.2l-18.12 17.62 4.28 24.88 19.52 113.45-102.13-53.59-22.38-11.74.03-317.19 51.03 103.29 11.18 22.63 25.01 3.64 114.23 16.63-82.65 80.38z"
+                          ></path>
+                        </svg>
+                      </li>
+                    </ul>
+                    <!-- stars -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev absolute top-0 bottom-0 left-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
+              type="button"
+              data-bs-target="#carouselTestimonials"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon inline-block bg-no-repeat"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next absolute top-0 bottom-0 right-0 flex items-center justify-center border-0 p-0 text-center hover:no-underline hover:outline-none focus:no-underline focus:outline-none"
+              type="button"
+              data-bs-target="#carouselTestimonials"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon inline-block bg-no-repeat"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <!-- testimonial-->
+      </div>
+      <!-- testimonial -->
+    </div>
+    <!-- mengapa locket -->
+
+    <!-- bergabung sekarang -->
+    <div class="relative overflow-hidden">
+      <img src="img/join now.png" alt="" class="h-64 w-full object-cover" />
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-gradient-to-r from-primary-100 to-secondary-100 opacity-40"
+      ></div>
+      <div class="sizing-content container-text-join mt-8 lg:mt-0">
+        <p class="text-2xl font-bold md:text-4xl">Bergabung Sekarang</p>
+        <div class="mt-4 flex items-center justify-center gap-6 md:gap-12">
+          <a href="#" class="transition-btn btn-primary"> Participants </a>
+          <a href="#" class="btn-outline-primary transition-btn-outline">
+            Event Organizer
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- bergabung sekarang -->
+
+    <%- include('layout/footer') %>
+  </body>
+</html>

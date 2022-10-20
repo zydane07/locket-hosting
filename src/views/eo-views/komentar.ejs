@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../layout/event-organizer/header') %>
+
+    <title>Komentar</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('../layout/event-organizer/sidebar') %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Komentar</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Komentar</li>
+                </ol>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- /.container-fluid -->
+          <div class="container-fluid">
+            <div class="card card-outline card-primary">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  <i class="fa-solid fa-comments"></i>
+                  Komentar
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table-bordered table-striped table">
+                  <thead>
+                    <tr>
+                      <th>Nama Event</th>
+                      <th>Tanggal Event</th>
+                      <th>Jumlah Komentar</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jakreatifes 2022</td>
+                      <td>12-02-2022</td>
+                      <td>48 Komentar</td>
+                      <td>
+                        <a
+                          class="btn-info bg-olive btn-sm btn"
+                          href="/detail-komentar"
+                        >
+                          <i class="fas fa-folder"> </i>
+                          Detail
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+
+      <%- include('../layout/event-organizer/footer') %>
+    </div>
+    <%- include('../layout/event-organizer/script') %>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Event Saya</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+
+    <div class="sizing-content font-montserrat mt-14 text-black">
+      <div class="items-start lg:flex">
+        <ul
+          class="nav nav-tabs mr-4 flex list-none flex-row flex-wrap border-b-0 pl-0"
+          id="tabs-tabVertical"
+          role="tablist"
+        >
+          <li class="nav-item flex-grow text-center" role="presentation">
+            <a
+              href="#tabs-event-saya"
+              class="active nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent lg:w-36"
+              id="tabs-home-tabVertical"
+              data-bs-toggle="pill"
+              data-bs-target="#tabs-event-saya"
+              role="tab"
+              aria-controls="tabs-event-saya"
+              aria-selected="true"
+              >Event Saya</a
+            >
+          </li>
+          <li class="nav-item flex-grow text-center" role="presentation">
+            <a
+              href="#tabs-event-selesai"
+              class="nav-link my-2 block border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 text-xs font-medium uppercase leading-tight hover:border-transparent hover:bg-gray-100 focus:border-transparent lg:w-36"
+              id="tabs-profile-tabVertical"
+              data-bs-toggle="pill"
+              data-bs-target="#tabs-event-selesai"
+              role="tab"
+              aria-controls="tabs-event-selesai"
+              aria-selected="false"
+              >Event Selesai</a
+            >
+          </li>
+        </ul>
+        <div class="tab-content" id="tabs-tabContentVertical">
+          <!-- event saya -->
+          <div
+            class="active show tab-pane fade"
+            id="tabs-event-saya"
+            role="tabpanel"
+            aria-labelledby="tabs-home-tabVertical"
+          >
+            <div
+              class="mt-6 items-center justify-center gap-6 lg:mt-0 lg:grid lg:grid-cols-2 xl:grid-cols-3"
+            >
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="/event-detail" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="/event-detail" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="/event-detail" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="/event-detail" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Event</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- event saya -->
+
+          <!-- event selesai -->
+          <div
+            class="fade tab-pane"
+            id="tabs-event-selesai"
+            role="tabpanel"
+            aria-labelledby="tabs-profile-tabVertical"
+          >
+            <div
+              class="mt-6 items-center justify-center gap-6 lg:mt-0 lg:grid lg:grid-cols-2 xl:grid-cols-3"
+            >
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="#" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+                <div
+                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full cursor-pointer overflow-hidden bg-light-200 opacity-70"
+                ></div>
+                <div class="badge-red absolute top-0 right-0 mt-2 mr-2">
+                  <span class="">Event Telah Selesai</span>
+                </div>
+              </div>
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="#" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+                <div
+                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full cursor-pointer overflow-hidden bg-light-200 opacity-70"
+                ></div>
+                <div class="badge-red absolute top-0 right-0 mt-2 mr-2">
+                  <span class="">Event Telah Selesai</span>
+                </div>
+              </div>
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="#" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+                <div
+                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full cursor-pointer overflow-hidden bg-light-200 opacity-70"
+                ></div>
+                <div class="badge-red absolute top-0 right-0 mt-2 mr-2">
+                  <span class="">Event Telah Selesai</span>
+                </div>
+              </div>
+              <div
+                class="card-event transition-card-event relative mb-6 lg:mb-0"
+              >
+                <a href="#" class="">
+                  <img src="img/poster.png" alt="event 1" class="img-event" />
+                  <div class="px-4 py-6 text-black">
+                    <h1 class="text-lg font-bold uppercase">GENBI MENGAJAR</h1>
+                    <div class="flex gap-3 text-xs">
+                      <div>
+                        <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                        <span>22 Oktober 2022</span>
+                      </div>
+                      <div class="">
+                        <i
+                          class="fa-solid fa-location-dot mr-1 inline-block"
+                        ></i>
+                        <span>Zoom Meeting</span>
+                      </div>
+                    </div>
+                    <div class="mt-2 text-justify text-xs">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime ipsam porro quos quia officia
+                      </p>
+                    </div>
+                    <div class="badge absolute top-0 mt-2">
+                      <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                      <span class="">Lomba</span>
+                    </div>
+                  </div>
+                </a>
+                <div
+                  class="absolute top-0 right-0 bottom-0 left-0 h-full w-full cursor-pointer overflow-hidden bg-light-200 opacity-70"
+                ></div>
+                <div class="badge-red absolute top-0 right-0 mt-2 mr-2">
+                  <span class="">Event Telah Selesai</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- event selesai -->
+        </div>
+      </div>
+    </div>
+
+    <%- include('layout/footer') %>
+  </body>
+</html>

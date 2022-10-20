@@ -1,0 +1,117 @@
+:root {
+  --primary-1: #0c3c62;
+  --primary-2: #0a304e;
+  --primary-3: #0a304e;
+  --primary-4: #082a45;
+  --primary-5: #07243b;
+  --primary-6: #061e31;
+  --primary-7: #051827;
+  --primary-8: #04121d;
+  --secondary-1: #00909a;
+  --secondary-2: #245072;
+  --secondary-3: #3d6381;
+  --secondary-4: #557791;
+  --secondary-5: #6d8aa1;
+  --secondary-6: #869eb1;
+  --secondary-7: #9eb1c0;
+  --secondary-8: #b6c5d0;
+  --dark: #01011a;
+  --light: #f0faff;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: var(--secondary-1);
+}
+
+[class*='sidebar-dark-'] {
+  background-color: var(--primary-3);
+}
+
+.btn-logout-2 {
+  padding: 0.5rem;
+  color: #c2c7d0 !important;
+  background: var(--primary-3);
+  border: none;
+  margin-left: 0.7rem;
+}
+
+.card-primary.card-outline {
+  border-top: 3px solid var(--secondary-1);
+}
+
+.user-block .comment,
+.user-block .description,
+.user-block .username {
+  margin-left: 0.5rem;
+}
+
+.btn-success {
+  background-color: var(--primary-1);
+  border-color: var(--primary-1);
+}
+.btn-success:hover {
+  background-color: var(--primary-2);
+  border-color: var(--primary-2);
+}
+
+.bg-olive {
+  background-color: var(--secondary-1) !important;
+}
+
+.card-primary:not(.card-outline) > .card-header {
+  background-color: var(--secondary-1);
+}
+
+.profile-pic-div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  width: 50%;
+  overflow: hidden;
+}
+#photo {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#file {
+  display: none;
+}
+
+#uploadBtn {
+  height: 40px;
+  width: 100%;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* left: 100%; */
+  /* transform: translateX(-50%); */
+  text-align: center;
+  background: var(--secondary-2);
+  color: #fff;
+  line-height: 30px;
+  font-family: sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  /* display: none; */
+}
+
+a {
+  color: var(--primary-1);
+}
+
+.text-primary {
+  color: var(--secondary-1) !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--secondary-1);
+}
+
+.login-page,
+.register-page {
+  background: linear-gradient(135.51deg, #0c3c62 -22.66%, #00909a 108.99%);
+}

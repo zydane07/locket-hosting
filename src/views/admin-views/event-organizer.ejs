@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../layout/admin-layout/header') %>
+
+    <title>Daftar Event Organizers</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('../layout/admin-layout/sidebar') %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Daftar Event Organizers</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">
+                    Daftar Event Organizers
+                  </li>
+                </ol>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- /.container-fluid -->
+          <div class="container-fluid">
+            <div class="card card-primary card-outline card-tabs">
+              <div class="card-header border-bottom-0 p-0 pt-1">
+                <ul
+                  class="nav nav-tabs"
+                  id="custom-tabs-three-tab"
+                  role="tablist"
+                >
+                  <li class="nav-item">
+                    <a
+                      class="active nav-link"
+                      id="custom-tabs-three-detail-tab"
+                      data-toggle="pill"
+                      href="#custom-tabs-three-home"
+                      role="tab"
+                      aria-controls="custom-tabs-three-home"
+                      aria-selected="true"
+                      >EO Terkonfirmasi
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      id="custom-tabs-three-peserta-tab"
+                      data-toggle="pill"
+                      href="#custom-tabs-three-profile"
+                      role="tab"
+                      aria-controls="custom-tabs-three-profile"
+                      aria-selected="false"
+                      >EO yang Belum Terkonfirmasi</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-three-tabContent">
+                  <div
+                    class="active fade show tab-pane"
+                    id="custom-tabs-three-home"
+                    role="tabpanel"
+                    aria-labelledby="custom-tabs-three-detail-tab"
+                  >
+                    <table
+                      class="table-bordered table-striped table"
+                      id="example1"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Nama EO</th>
+                          <th>Email</th>
+                          <th>No. Handphone</th>
+                          <th style="width: 40%">Deskripsi</th>
+                          <td>Prasyarat</td>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="align-items-center d-flex justify-content-start user-block border-0"
+                          >
+                            <img
+                              class="img-circle img-bordered-sm"
+                              src="/img/logo EO.png"
+                              alt="user image"
+                            />
+                            <span class="username">Ufo Veteran Jakarta</span>
+                          </td>
+                          <td>ufo@gmail.com</td>
+                          <td>80808080</td>
+                          <td>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Odit voluptas similique et debitis in quod
+                            consequuntur sed itaque mollitia ipsa?
+                          </td>
+                          <td>
+                            <a
+                              type="button"
+                              class="btn-block btn-light btn-sm btn border"
+                              data-toggle="modal"
+                              data-target="#modalPrasyarat"
+                            >
+                              Prasyarat
+                            </a>
+                          </td>
+                          <td>
+                            <a
+                              class="btn-danger btn-sm btn text-white"
+                              data-toggle="modal"
+                              data-target="#deletemodal-eo"
+                            >
+                              <i class="fas fa-trash"> </i>
+                              Hapus
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- Modal Delete-->
+                    <div
+                      class="fade modal"
+                      id="deletemodal-eo"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="deletemodal-eoTitle"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">
+                              Hapus Event Organizers
+                            </h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Apakah Kamu Yakin ingin Menghapus Event Organizers
+                            ini?
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn-secondary btn"
+                              data-dismiss="modal"
+                            >
+                              Batal
+                            </button>
+                            <button type="button" class="btn-danger btn">
+                              Hapus
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Modal Prasyarat-->
+                    <div
+                      class="fade modal"
+                      id="modalPrasyarat"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="modalPrasyaratTitle"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <img
+                              id="myImg"
+                              src="/img/poster.png"
+                              alt="Poster"
+                              class="d-block w-100 mx-auto rounded"
+                              style="max-width: 450px"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="fade tab-pane"
+                    id="custom-tabs-three-profile"
+                    role="tabpanel"
+                    aria-labelledby="custom-tabs-three-peserta-tab"
+                  >
+                    <table class="table-bordered table-striped table">
+                      <thead>
+                        <tr>
+                          <th style="width: 20%">Nama EO</th>
+                          <th>Email</th>
+                          <th>No. Handphone</th>
+                          <th style="width: 40%">Deskripsi</th>
+                          <td>Prasyarat</td>
+                          <th style="width: 20%">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td
+                            class="align-items-center d-flex justify-content-start user-block border-0"
+                          >
+                            <img
+                              class="img-circle img-bordered-sm"
+                              src="/img/logo EO.png"
+                              alt="user image"
+                            />
+                            <span class="username">Ufo Veteran Jakarta</span>
+                          </td>
+                          <td>ufo@gmail.com</td>
+                          <td>80808080</td>
+                          <td>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Odit voluptas similique et debitis in quod
+                            consequuntur sed itaque mollitia ipsa?
+                          </td>
+                          <td>
+                            <a
+                              type="button"
+                              class="btn-block btn-light btn-sm btn border"
+                              data-toggle="modal"
+                              data-target="#modalPrasyarat"
+                            >
+                              Prasyarat
+                            </a>
+                          </td>
+                          <td>
+                            <a
+                              class="btn-success btn-sm btn text-white"
+                              data-toggle="modal"
+                              data-target="#konformasi-eo"
+                            >
+                              <i class="fa fa-check"> </i>
+                              Konfirmasi
+                            </a>
+                            <a
+                              class="btn-danger btn-sm btn text-white"
+                              data-toggle="modal"
+                              data-target="#noKonfirmasi-eo"
+                            >
+                              <i class="fas fa-trash"> </i>
+                              Hapus
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- modal konfirmasi -->
+                    <div
+                      class="fade modal"
+                      id="konformasi-eo"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="konformasi-eoTitle"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">
+                              Konfirmasi Event Organizers
+                            </h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Apakah Kamu Yakin ingin Konfirmasi Event Organizers
+                            ini?
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn-secondary btn"
+                              data-dismiss="modal"
+                            >
+                              Batal
+                            </button>
+                            <button type="button" class="btn-success btn">
+                              Konfirmasi
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Modal Delete-->
+                    <div
+                      class="fade modal"
+                      id="noKonfirmasi-eo"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="noKonfirmasi-eoTitle"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">
+                              Hapus Event Organizers
+                            </h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Apakah Kamu Yakin ingin Menghapus Event Organizers
+                            ini?
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn-secondary btn"
+                              data-dismiss="modal"
+                            >
+                              Batal
+                            </button>
+                            <button type="button" class="btn-danger btn">
+                              Hapus
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- /.card -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+
+      <%- include('../layout/admin-layout/footer') %>
+    </div>
+    <%- include('../layout/admin-layout/script') %>
+  </body>
+</html>

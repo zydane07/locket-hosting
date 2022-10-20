@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Lupa Password</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/login-header') %>
+
+    <div
+      class="font-montserrat relative grid h-screen grid-cols-1 items-center justify-center lg:grid-cols-3"
+    >
+      <div class="sizing-content col-span-2 mb-28 lg:mb-0">
+        <!-- header -->
+        <div class="mb-6 text-center">
+          <h1 class="text-header text-style-header mb-2 text-3xl">
+            Lupa Kata Sandi?
+          </h1>
+          <p class="text-sm">
+            Masukkan email yang terdaftar dengan akun Anda dan kami akan
+            mengirim email dengan instruksi untuk mengatur ulang kata sandi Anda
+          </p>
+        </div>
+        <!-- header -->
+
+        <div class="mb-4 flex items-center justify-center">
+          <img
+            src="icon/icon-kirim.svg"
+            alt="icon kirim"
+            class="h-44 sm:h-64"
+          />
+        </div>
+
+        <form action="#" method="">
+          <!-- Email input -->
+          <div class="mb-8">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="text"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan Email"
+                id="email"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan Email</label
+              >
+            </div>
+          </div>
+
+          <a
+            type="submit"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            class="bg-gradient-2 btn-login btn-login-transition mb-2"
+            href="/lupa-pass-2"
+          >
+            Kirim Instruksi
+          </a>
+
+          <div class="flex justify-center gap-2 text-sm">
+            <p>Ingat Kata sandi?</p>
+            <a href="/login" class="text-primary-100 hover:font-bold"
+              >Login disini</a
+            >
+          </div>
+        </form>
+      </div>
+      <%- include('layout/login-side') %>
+    </div>
+    <%- include('layout/login-footer') %>
+  </body>
+</html>

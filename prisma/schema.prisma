@@ -1,0 +1,259 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id                       Int      @id
+  access_token             String   @db.Text
+  refresh_token            String   @db.Text
+  refresh_token_expired_at DateTime
+  user                     User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  user_id                  Int
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+}
+
+model User {
+  id                 Int                  @id
+  email              String               @unique
+  name               String
+  password           String
+  role               Role                 @relation(fields: [role_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  role_id            Int
+  Session            Session[]
+  Event_Organizer    Event_Organizer?
+  Participant        Participant?
+  EventComment       EventComment[]
+  Notification       Notification[]
+  NotificationChange NotificationChange[]
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+  Feedback           Feedback[]
+}
+
+model Role {
+  id   Int    @id
+  name String
+  User User[]
+}
+
+model Image {
+  id                           Int                            @id
+  public_id                    String
+  width                        Int
+  height                       Int
+  version                      Int
+  format                       String
+  etag                         String
+  url                          String
+  secure_url                   String
+  signature                    String
+  createdAt                    DateTime                       @default(now())
+  updatedAt                    DateTime                       @updatedAt
+  Event_Organizer              Event_Organizer[]
+  Participant                  Participant[]
+  Event                        Event[]
+  EventPrecondition            EventPrecondition[]
+  Event_Organizer_Precondition Event_Organizer_Precondition[]
+}
+
+model Event_Organizer {
+  id                           Int                           @id
+  user                         User                          @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  user_id                      Int                           @unique
+  image                        Image?                        @relation(fields: [image_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  image_id                     Int?
+  description                  String?                       @db.Text
+  is_verified                  Boolean                       @default(false)
+  Event_Organizer_Precondition Event_Organizer_Precondition?
+  Event                        Event[]
+  createdAt                    DateTime                      @default(now())
+  updatedAt                    DateTime                      @updatedAt
+  SubscribeEO                  SubscribeEO[]
+}
+
+model Event_Organizer_Precondition {
+  id                 Int             @id
+  event_organizer    Event_Organizer @relation(fields: [event_organizer_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_organizer_id Int             @unique
+  image              Image           @relation(fields: [image_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  image_id           Int             @unique
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+}
+
+model Participant {
+  id               Int                @id
+  user             User               @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  user_id          Int                @unique
+  phone_number     String             @unique
+  gender           String?
+  birth_date       DateTime?
+  image            Image?             @relation(fields: [image_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  image_id         Int?
+  status           String?
+  EventParticipant EventParticipant[]
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  SubscribeEO      SubscribeEO[]
+}
+
+model Category {
+  id          Int     @id
+  name        String  @unique
+  description String
+  Event       Event[]
+}
+
+model Eligibility {
+  id          Int     @id
+  name        String  @unique
+  description String
+  Event       Event[]
+}
+
+model Event {
+  id                           Int                            @id
+  event_organizer              Event_Organizer                @relation(fields: [event_organizer_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_organizer_id           Int
+  name                         String
+  date_time                    DateTime
+  image                        Image?                         @relation(fields: [image_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  image_id                     Int?
+  description                  String                         @db.Text
+  is_verified                  Boolean                        @default(false)
+  category                     Category                       @relation(fields: [category_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  category_id                  Int
+  eligibility                  Eligibility                    @relation(fields: [eligibility_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  eligibility_id               Int
+  EventParticipant             EventParticipant[]
+  EventComment                 EventComment[]
+  createdAt                    DateTime                       @default(now())
+  updatedAt                    DateTime                       @updatedAt
+  EventPreconditionDescription EventPreconditionDescription[]
+}
+
+model EventPreconditionDescription {
+  id                Int                 @id
+  name              String
+  event             Event               @relation(fields: [event_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_id          Int
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  EventPrecondition EventPrecondition[]
+}
+
+model EventParticipant {
+  id                Int                 @id
+  participant       Participant         @relation(fields: [participant_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  participant_id    Int
+  event             Event               @relation(fields: [event_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_id          Int
+  EventPrecondition EventPrecondition[]
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+}
+
+model EventPrecondition {
+  id                                Int                          @id
+  event_participant                 EventParticipant             @relation(fields: [event_participant_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_participant_id              Int
+  event_precondition_description    EventPreconditionDescription @relation(fields: [event_precondition_description_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_precondition_description_id Int
+  image                             Image                        @relation(fields: [image_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  image_id                          Int
+  createdAt                         DateTime                     @default(now())
+  updatedAt                         DateTime                     @updatedAt
+}
+
+model EventComment {
+  id             Int      @id
+  user           User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  user_id        Int
+  event          Event    @relation(fields: [event_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_id       Int
+  comment        String   @db.VarChar(255)
+  parent_id      Int?
+  mentioned_user String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model EntityType {
+  id                 Int                  @id
+  entity             Int                  @unique
+  description        String
+  status             String
+  NotificationObject NotificationObject[]
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+}
+
+model NotificationObject {
+  id                 Int                  @id
+  entity_type        EntityType           @relation(fields: [entity_type_id], references: [id])
+  entity_type_id     Int
+  Notification       Notification[]
+  NotificationChange NotificationChange[]
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+}
+
+model Notification {
+  id                     Int                @id
+  notification_object    NotificationObject @relation(fields: [notification_object_id], references: [id])
+  notification_object_id Int
+  notifier               User               @relation(fields: [notifier_id], references: [id])
+  notifier_id            Int
+  is_read                Boolean            @default(false)
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+}
+
+model NotificationChange {
+  id                     Int                @id
+  notification_object    NotificationObject @relation(fields: [notification_object_id], references: [id])
+  notification_object_id Int
+  actor                  User               @relation(fields: [actor_id], references: [id])
+  actor_id               Int
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+}
+
+model Token {
+  id         Int      @id
+  email      String
+  token      String   @db.Text
+  expired_at DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Feedback {
+  id        Int      @id
+  user      User     @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  user_id   Int
+  review    String   @db.Text
+  star      Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SubscribeEO {
+  id                 Int             @id
+  participant        Participant     @relation(fields: [participant_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  participant_id     Int
+  event_organizer    Event_Organizer @relation(fields: [event_organizer_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  event_organizer_id Int
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+}

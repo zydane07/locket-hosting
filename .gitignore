@@ -1,0 +1,17 @@
+!dist
+
+dist/*
+!dist/plugin
+!dist/css
+dist/css/*
+!dist/css/styles.css
+!dist/css/adminlte.min.css
+
+!dist/js
+dist/js/*
+!dist/js/adminlte.js
+!dist/js/script_admin.js
+!dist/js/script.js
+
+node_modules
+.env

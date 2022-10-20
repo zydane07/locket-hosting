@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Register Participant Page</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/login-header') %>
+
+    <div
+      class="font-montserrat register-container relative grid grid-cols-1 items-center justify-center lg:grid-cols-3"
+    >
+      <div class="sizing-content col-span-2 mb-20 lg:mb-0">
+        <!-- header -->
+        <div class="mb-6 text-center">
+          <h1 class="text-header text-style-header mb-2 text-3xl">
+            Selamat Datang!
+          </h1>
+          <p class="text-sm">Silahkan isi data-data berikut untuk mendaftar</p>
+        </div>
+        <!-- header -->
+
+        <form action="#" method="">
+          <!-- Email input -->
+          <div class="mb-6">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="text"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan Email"
+                id="email"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan Email</label
+              >
+            </div>
+          </div>
+
+          <!-- Nama Input -->
+          <div class="mb-6">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="text"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan Nama"
+                id="name"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan Nama</label
+              >
+            </div>
+          </div>
+
+          <!-- no hp input -->
+          <div class="mb-6">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="text"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan No. Telepon"
+                id="no-phone"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan No. Telepon</label
+              >
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div class="mb-8">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="password"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Masukkan Password"
+                id="password"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Masukkan Password</label
+              >
+            </div>
+          </div>
+          <!-- Password Konfirmasi input -->
+          <div class="mb-8">
+            <div class="font-montserrat form-floating relative w-full">
+              <input
+                type="password"
+                class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+                placeholder="Konfirmasi Password"
+                id="password-2"
+              />
+              <label for="floatingInput" class="text-gray-400"
+                >Konfirmasi Password</label
+              >
+            </div>
+          </div>
+
+          <a
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            class="bg-gradient-2 btn-login btn-login-transition mb-2"
+            id="registerParticipantBtn"
+          >
+            Daftar
+          </a>
+        </form>
+      </div>
+      <%- include('layout/login-side') %>
+    </div>
+    <script src="/js/register.min.js" type="module"></script>
+    <%- include('layout/login-footer') %>
+  </body>
+</html>

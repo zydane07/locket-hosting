@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../layout/event-organizer/header') %>
+
+    <title>Detail Komentar</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('../layout/event-organizer/sidebar') %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Detail Komentar</h1>
+              </div>
+              <!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                  <li class="breadcrumb-item active">Detail Komentar</li>
+                </ol>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- /.container-fluid -->
+          <div class="container-fluid">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title">JAKREATIFEST 2022</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <img
+                  id="photo"
+                  class="img-fluid d-block w-100 mx-auto mb-4 rounded"
+                  src="/img/poster.png"
+                  style="max-width: 450px"
+                  alt="Photo"
+                />
+                <div class="mb-4">
+                  <h3 class="font-weight-bold">DESKRIPSI EVENT</h3>
+                  <p class="text-justify">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestias adipisci quo minus, beatae assumenda, sed rem
+                    labore vel fuga maiores sunt sit ut et fugit aliquam
+                    accusantium est! Sed esse animi neque quidem magni suscipit,
+                    maxime corporis, dolore quia magnam iusto beatae officiis,
+                    ex accusamus incidunt et cum hic earum voluptatum fugit
+                    similique debitis! Adipisci quia fuga iure unde maxime
+                    accusamus nisi est vero, enim ipsa natus culpa, aperiam
+                    commodi sunt repellat reiciendis quaerat at cumque corrupti.
+                    Dolore molestiae quasi eos harum voluptates similique eum
+                    non hic laudantium necessitatibus debitis pariatur totam et
+                    ratione nesciunt commodi sit error, quibusdam impedit
+                    quaerat deleniti. Libero aliquid, aliquam dicta hic iusto
+                    similique at laudantium reiciendis repudiandae praesentium
+                    incidunt? Laboriosam minus sint enim labore libero quo
+                    similique nemo repudiandae eligendi dolore at, voluptatum
+                    quod, harum et facere incidunt aliquam voluptates, aperiam
+                    consequatur veritatis molestiae reprehenderit deleniti!
+                    Animi consequuntur, nulla repudiandae, mollitia hic sequi
+                    nostrum maiores architecto aliquid excepturi voluptate.
+                    Assumenda eos vel quia non voluptas veritatis repellat esse
+                    dolorum, veniam quam numquam eius molestiae fugit magni
+                    dolor similique velit. Delectus iure praesentium tenetur
+                    fugit laboriosam iusto suscipit nesciunt natus nemo
+                    blanditiis mollitia provident id, eaque voluptatem earum
+                    aliquid rerum quibusdam quod ullam nisi voluptas.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <h3 class="font-weight-bold">BENEFIT EVENT</h3>
+                  <ul>
+                    <li>
+                      Now this is a story all about how, my life got
+                      flipped-turned upside down
+                    </li>
+                    <li>
+                      Now this is a story all about how, my life got
+                      flipped-turned upside down
+                    </li>
+                    <li>
+                      Now this is a story all about how, my life got
+                      flipped-turned upside down
+                    </li>
+                  </ul>
+                </div>
+
+                <span class="text-muted float-right"> 48 comments</span>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer card-comments">
+                <!-- /.card-comment -->
+                <div class="card-comment">
+                  <!-- User image -->
+                  <img
+                    class="img-circle img-sm"
+                    src="/img/poto pp.png"
+                    alt="User Image"
+                  />
+
+                  <div class="comment-text">
+                    <span class="username">
+                      Luna Stark
+                      <span class="text-muted float-right"
+                        >8:03 PM Today</span
+                      > </span
+                    ><!-- /.username -->
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout.
+                      <a
+                        class="text-primary"
+                        data-toggle="collapse"
+                        href="#collapseComment"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseComment"
+                      >
+                        <small class="text-primary">Balas</small>
+                      </a>
+                    </p>
+                    <div class="collapse" id="collapseComment">
+                      <div class="card card-body card-footer">
+                        <form action="#" method="post">
+                          <img
+                            class="img-fluid img-circle img-sm"
+                            src="/img/logo EO.png"
+                            alt="Alt Text"
+                          />
+                          <!-- .img-push is used to add margin to elements next to floating images -->
+                          <div class="img-push">
+                            <input
+                              type="text"
+                              class="form-control-sm form-control"
+                              placeholder="Press enter to post comment"
+                            />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.comment-text -->
+                </div>
+                <!-- /.card-comment -->
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+      </div>
+
+      <%- include('../layout/event-organizer/footer') %>
+    </div>
+    <%- include('../layout/event-organizer/script') %>
+  </body>
+</html>

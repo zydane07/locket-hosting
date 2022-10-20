@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Verifikasi Sukses</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/login-header') %>
+
+    <div
+      class="font-montserrat relative grid h-screen grid-cols-1 items-center justify-center lg:grid-cols-3"
+    >
+      <div class="sizing-content col-span-2 mb-28 lg:mb-0">
+        <!-- header -->
+        <div class="mb-6 text-center">
+          <h1 class="text-header text-style-header mb-2 text-3xl">
+            Verifikasi Berhasil
+          </h1>
+          <p class="text-sm">
+            Silahkan login kembali untuk masuk kedalam dashboard
+          </p>
+        </div>
+        <!-- header -->
+
+        <div class="mb-4 flex items-center justify-center">
+          <img
+            src="icon/icon-sukses-2.svg"
+            alt="icon kirim"
+            class="h-44 sm:h-64"
+          />
+        </div>
+
+        <a
+          type="submit"
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="light"
+          class="bg-gradient-2 btn-login btn-login-transition mb-2"
+          href="/login"
+        >
+          Selanjutnya
+        </a>
+      </div>
+      <%- include('layout/login-side') %>
+    </div>
+    <%- include('layout/login-footer') %>
+  </body>
+</html>

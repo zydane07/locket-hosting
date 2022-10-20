@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,700;1,200;1,400;1,500;1,700&display=swap');
+
+.navbar {
+  @apply relative flex w-full flex-wrap items-center justify-between bg-primary-100 py-4 shadow-lg;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.active-nav {
+  @apply border-b-2 font-bold;
+}
+
+.nav-hover {
+  @apply hover:border-b-2 hover:border-light-200 hover:text-light-200 focus:border-b-2 focus:border-light-200 focus:text-light-200;
+}
+
+.carousel-img {
+  @apply relative -z-10 float-left h-64 w-full bg-cover bg-center bg-no-repeat md:h-96;
+}
+
+.carousel-show-text {
+  @apply font-montserrat absolute right-0 left-0 top-0 bottom-0 w-full px-10 py-8 text-center md:px-24 md:py-20 lg:py-28 lg:px-28 xl:px-36;
+}
+.carousel-show-text-2 {
+  @apply font-montserrat absolute right-0 left-0 top-0 bottom-0 w-full px-10 py-12 text-center sm:py-20 sm:px-16 md:px-24 md:py-28 lg:py-28 lg:px-28 xl:px-36;
+}
+
+.text-style-header {
+  @apply font-montserrat text-black;
+}
+.text-style-header-white {
+  @apply font-montserrat text-light-100;
+}
+
+.card-event {
+  @apply font-montserrat h-96 overflow-hidden rounded-2xl border border-primary-100;
+}
+
+.transition-card-event {
+  @apply transition delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-md;
+}
+
+.img-event {
+  @apply h-56 w-full overflow-hidden object-cover;
+}
+
+.sizing-content {
+  @apply py-8 px-10 md:px-24 lg:py-20 lg:px-28 xl:px-36;
+}
+
+.text-header {
+  @apply font-bold uppercase md:text-3xl;
+}
+
+.btn-primary-lg {
+  @apply cursor-pointer rounded-xl bg-primary-100 px-8 py-4 text-light-100;
+}
+
+.btn-primary-transition {
+  @apply transition delay-150 duration-300 ease-in-out  hover:bg-secondary-100 hover:shadow-md;
+}
+
+.badge {
+  @apply rounded-full bg-sky-600 px-4 py-2 text-xs text-light-100;
+}
+.badge-red {
+  @apply rounded-full bg-red-600 px-4 py-2 text-xs text-light-100;
+}
+#btn-back-to-top {
+  position: fixed;
+  display: none;
+}
+
+.img-benefit {
+  @apply h-32 rounded-3xl border border-secondary-100 object-cover p-8;
+}
+
+.caption-benefit {
+  @apply font-montserrat mt-2 text-center text-sm text-black;
+}
+
+.container-text-join {
+  @apply font-montserrat absolute top-0 bottom-0 left-0 right-0 text-center text-light-100;
+}
+
+.transition-btn {
+  @apply transition duration-150 ease-in-out hover:bg-teal-800 hover:shadow-lg focus:bg-teal-800 focus:shadow-lg focus:outline-none focus:ring-0;
+}
+
+.btn-primary {
+  @apply cursor-pointer  rounded-xl border border-primary-100 bg-primary-100 px-4 py-2 text-light-100;
+}
+
+.btn-outline-primary {
+  @apply rounded-xl border border-light-100 px-4 py-2;
+}
+
+.transition-btn-outline {
+  @apply transition duration-150 ease-in-out hover:border-teal-800 hover:bg-teal-800 hover:shadow-lg focus:bg-teal-800 focus:shadow-lg  focus:ring-0;
+}
+
+.sizing-footer {
+  @apply py-4 px-10 md:px-24 lg:px-28 xl:px-36;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-primary-100 to-black;
+}
+.bg-gradient-2 {
+  @apply bg-gradient-to-r from-primary-100 to-secondary-400;
+}
+
+.transition-form {
+  @apply transition ease-in-out focus:border-secondary-100 focus:bg-white focus:text-black focus:outline-none;
+}
+
+.btn-light {
+  @apply w-full rounded-xl bg-light-200 text-black;
+}
+.btn-light-2 {
+  @apply cursor-pointer  rounded-xl border  border-primary-100 bg-light-200 px-4 py-2 text-black;
+}
+.btn-light-lg {
+  @apply cursor-pointer rounded-xl border border-primary-100 bg-light-200 px-8 py-4 text-black;
+}
+.transition-btn-light {
+  @apply transition duration-150 ease-in-out hover:bg-neutral-200 hover:shadow-sm focus:bg-neutral-200 focus:shadow-lg focus:outline-none focus:ring-0;
+}
+
+.poster-event {
+  @apply h-80 overflow-hidden rounded-2xl border-2 border-primary-100 text-center;
+}
+
+.eo-title {
+  @apply font-montserrat flex items-center  gap-2;
+}
+
+.subscribe {
+  @apply font-montserrat text-center;
+}
+
+.caption-detail-event {
+  @apply font-montserrat mt-2 text-justify text-sm text-black;
+}
+
+.input-file {
+  @apply block w-full appearance-none rounded-lg border border-gray-300 py-3 px-4 leading-tight text-black focus:border-2 focus:border-gray-500 focus:bg-white focus:outline-none;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  border-color: #0c3c62 !important;
+  color: #0c3c62 !important;
+}
+
+.footer-style {
+  @apply font-montserrat bg-primary-100 text-light-100;
+}
+
+.btn-login {
+  @apply w-full rounded-lg px-4 py-3 text-center text-light-100;
+}
+
+.btn-login-transition {
+  @apply transition delay-150 duration-300 ease-in-out hover:font-bold;
+}
+
+.register-container {
+  height: 140vh;
+}
+
+.register-container-2 {
+  height: 125vh;
+}
+
+@media (min-width: 640px) {
+  .register-container {
+    height: 120vh;
+  }
+  .register-container-2 {
+    height: 110vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .register-container {
+    height: 110vh;
+  }
+  .register-container-2 {
+    height: 100vh;
+  }
+}
+
+.profile-pict-container {
+  @apply block h-36 w-36 rounded-full border border-primary-100;
+}
+
+.btn-change-pict {
+  @apply absolute bottom-0 right-0 left-0 bg-secondary-100 py-2 text-center text-light-100 opacity-80;
+}
+
+.container-profile {
+  @apply rounded-md border-t-4 border-primary-100 bg-white py-4 px-6 shadow-md;
+}

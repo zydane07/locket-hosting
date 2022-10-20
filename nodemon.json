@@ -1,0 +1,10 @@
+{
+  "watch": ["main.ts", "src"],
+  "ext": "ts,js,json",
+  "ignore": ["node_modules", "dist", "src/public"],
+  "exec": "ts-node -r tsconfig-paths/register main.ts",
+  "restartable": "res",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

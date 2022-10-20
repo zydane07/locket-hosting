@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Homepage</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+
+    <!-- Cari Lomba -->
+    <div class="sizing-content bg-gradient mt-14">
+      <div class="text-style-header-white mb-6 text-center">
+        <h1 class="text-header text-2xl">Cari Lomba dan Event</h1>
+      </div>
+      <form
+        action="#"
+        class="grid-cols-3 items-center gap-4 text-center lg:grid"
+      >
+        <div class="mb-4 lg:mb-0">
+          <div class="font-montserrat form-floating relative w-full">
+            <input
+              type="text"
+              class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+              placeholder="Nama Event/Lomba"
+              id="nama-event"
+            />
+            <label for="floatingInput" class="text-gray-400"
+              >Nama Event/Lomba</label
+            >
+          </div>
+        </div>
+        <div class="mb-4 lg:mb-0">
+          <div
+            class="font-montserrat datepicker form-floating relative w-full"
+            data-mdb-toggle-button="false"
+          >
+            <input
+              type="text"
+              class="transition-form form-control w-full rounded-xl border bg-green-50 text-black"
+              placeholder="Tanggal Event/Lomba"
+              id="tanggal-event"
+              data-mdb-toggle="datepicker"
+            />
+            <label for="floatingInput" class="text-gray-400"
+              >Tanggal Event/Lomba</label
+            >
+          </div>
+        </div>
+        <div class="mb-4 lg:mb-0">
+          <select
+            id="countries"
+            class="font-montserrat transition-form form-select w-full appearance-none rounded-xl border bg-green-50 bg-clip-padding bg-no-repeat py-4 px-3 text-black"
+          >
+            <option selected>Pilih Kategori</option>
+            <option value="event">Event</option>
+            <option value="lomba">Lomba</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-light transition-btn-light col-span-3">
+          <div class="font-montserrat py-4 px-5">
+            <i class="fa-solid fa-magnifying-glass mr-2 inline-block"></i>
+            <span>Cari Sekarang</span>
+          </div>
+        </button>
+      </form>
+    </div>
+    <!-- Cari Lomba -->
+
+    <!-- event terbaru -->
+    <div class="sizing-content">
+      <div class="text-style-header text-center">
+        <h1 class="text-header">Event dan lomba tersedia</h1>
+      </div>
+      <div
+        class="mt-6 grid-cols-3 items-center justify-center gap-6 md:mt-12 lg:grid"
+      >
+        <% if (allEvents.length > 0) { %> <% allEvents.forEach(events =>{ %>
+        <div class="card-event transition-card-event relative mb-6">
+          <a href="/event/<%= events.id %> " class="">
+            <img
+              src="<%= events.image.secure_url %>"
+              alt="event 1"
+              class="img-event"
+            />
+            <div class="px-4 py-6 text-black">
+              <h1 class="text-lg font-bold uppercase"><%= events.name %></h1>
+              <div class="flex gap-3 text-xs">
+                <div>
+                  <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                  <span><%= events.date_time %> </span>
+                </div>
+                <div class="">
+                  <i class="fa-solid fa-location-dot mr-1 inline-block"></i>
+                  <span>Zoom Meeting</span>
+                </div>
+              </div>
+              <div class="mt-2 text-justify text-xs">
+                <p><%= events.description %></p>
+              </div>
+              <div class="badge absolute top-0 mt-2">
+                <i class="fa-solid fa-bullseye mr-1 inline-block"></i>
+                <span class=""><%= events.category.name %></span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <% }) } %> <% if (allEvents.length == 0) { %>
+        <div class="mb-6 flex justify-center">
+          <img
+            src="/icon/empty.svg"
+            alt="Lomba Kosong"
+            class="h-64 object-cover"
+          />
+        </div>
+        <p class="mb-6 text-center text-xl font-bold text-black">
+          Belum ada Event/Lomba
+        </p>
+        <% } %>
+      </div>
+    </div>
+    <!-- event terbaru -->
+
+    <%- include('layout/footer') %>
+  </body>
+</html>

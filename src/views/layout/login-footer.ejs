@@ -1,0 +1,26 @@
+<!-- Jquery -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<!-- tw elements -->
+<script src="/js/tw_elements.min.js"></script>
+
+<!-- popperjs -->
+<script
+  src="https://unpkg.com/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+  charset="utf-8"
+></script>
+<script type="text/javascript">
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]'),
+  );
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new Tooltip(tooltipTriggerEl);
+  });
+</script>
+
+<script src="js/base.min.js" type="module"></script>

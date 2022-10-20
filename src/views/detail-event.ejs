@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Detail Event</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/navbar') %>
+
+    <!-- poster lomba -->
+    <div
+      class="sizing-content mt-14 rounded-b-3xl bg-light-200 text-black shadow-sm shadow-secondary-100"
+    >
+      <div class="justify-center sm:flex">
+        <div class="poster-event mb-8 sm:w-80 md:h-96 md:w-96">
+          <img
+            src="<%= detailEvents.image.secure_url %>"
+            alt="Poster Event"
+            class=""
+          />
+        </div>
+      </div>
+      <div
+        class="grid-cols-2 items-center justify-between gap-2 md:grid lg:grid-cols-5"
+      >
+        <div class="mb-4 text-center lg:col-span-2">
+          <div class="text-style-header">
+            <h2 class="text-header mb-2 text-2xl"><%= detailEvents.name %></h2>
+            <div class="flex justify-center gap-3 text-sm text-gray-500">
+              <div>
+                <i class="fa-solid fa-calendar mr-1 inline-block"></i>
+                <span><%= detailEvents.date_time %></span>
+              </div>
+              <div class="">
+                <i class="fa-solid fa-location-dot mr-1 inline-block"></i>
+                <span>Zoom Meeting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="eo-title mb-4 justify-center md:justify-center lg:col-span-2 lg:justify-start"
+        >
+          <img
+            src="/img/logo EO.png"
+            alt="Logo EO"
+            class="h-16 rounded-full border-2 border-primary-100"
+          />
+          <div>
+            <h5 class="text-lg font-bold capitalize">ufo veteran jakarta</h5>
+            <a
+              class="cursor-pointer text-sm tracking-wider text-secondary-100 hover:font-bold"
+              href="/semua-event"
+              >Lihat Semua event</a
+            >
+          </div>
+        </div>
+        <div
+          class="btn-primary-lg subscribe btn-primary-transition col-span-2 lg:col-span-1"
+          id="subscribeEoLg"
+        >
+          <button type="submit" class="tracking-widest" id="btn_Subscribe">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- poster lomba -->
+
+    <!-- detail event -->
+    <div class="sizing-content grid-cols-2 gap-6 lg:grid">
+      <div class="mb-6">
+        <div class="text-style-header mb-2">
+          <h1 class="text-header text-xl">Deskripsi Event</h1>
+        </div>
+        <div>
+          <p class="caption-detail-event"><%= detailEvents.description %></p>
+        </div>
+      </div>
+      <div class="">
+        <div class="mb-6">
+          <div class="text-style-header mb-2">
+            <h1 class="text-header text-xl">Benefit Event</h1>
+          </div>
+          <div>
+            <ul class="caption-detail-event list-disc">
+              <li class="ml-6 mb-2">
+                Now this is a story all about how, my life got flipped-turned
+                upside down
+              </li>
+              <li class="ml-6 mb-2">
+                Now this is a story all about how, my life got flipped-turned
+                upside down
+              </li>
+              <li class="ml-6 mb-2">
+                Now this is a story all about how, my life got flipped-turned
+                upside down
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-6 lg:mb-0">
+          <div class="text-style-header mb-2">
+            <h1 class="text-header text-xl">Prasyarat Event</h1>
+          </div>
+          <div>
+            <form action="#" method="post">
+              <ul class="caption-detail-event list-decimal">
+                <li class="ml-6 mb-4">
+                  <div>
+                    <label
+                      for="formFileLg"
+                      class="form-label mb-2 inline-block text-gray-700"
+                      >Follow Instagram @ufo.veteran</label
+                    >
+                    <input
+                      type="file"
+                      id="bukti_1"
+                      name="bukti_1"
+                      class="input-file"
+                      aria-describedby="file_input_help_1"
+                    />
+                    <p
+                      class="mt-1 text-xs text-gray-500"
+                      id="file_input_help_1"
+                    >
+                      Maksimal 2MB, Tipe File .png, .jpg.
+                    </p>
+                  </div>
+                </li>
+                <li class="ml-6 mb-4">
+                  <div>
+                    <label
+                      for="formFileLg"
+                      class="form-label mb-2 inline-block text-gray-700"
+                      >Follow Youtube @ufo.veteran</label
+                    >
+                    <input
+                      type="file"
+                      id="bukti_2"
+                      name="bukti_2"
+                      class="input-file"
+                      aria-describedby="file_input_help_2"
+                    />
+                    <p
+                      class="mt-1 text-xs text-gray-500"
+                      id="file_input_help_2"
+                    >
+                      Maksimal 2MB, Tipe File .png, .jpg.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <div
+                class="btn-primary-lg subscribe btn-primary-transition col-span-2 lg:col-span-1"
+              >
+                <button
+                  type="submit"
+                  class="font-bold uppercase tracking-widest"
+                >
+                  daftar event
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- detail event -->
+
+    <!-- comment section -->
+    <div class="sizing-content bg-light-200">
+      <div class="text-style-header mb-2 text-center">
+        <h1 class="text-header text-xl">Forum Diskusi</h1>
+      </div>
+      <form action="#" class="my-4">
+        <div class="font-montserrat rounded-xl bg-white p-2 pt-4 shadow-lg">
+          <div class="ml-3 flex">
+            <div class="mr-3">
+              <img src="/img/Poto PP.png" alt="" class="h-16 rounded-full" />
+            </div>
+            <div>
+              <h1 class="font-semibold">Muhammad Zydane</h1>
+              <p class="text-xs text-gray-500">Mahasiswa</p>
+            </div>
+          </div>
+          <div class="mt-2 w-full p-3">
+            <textarea
+              rows="5"
+              class="w-full rounded-xl border p-2 text-sm focus:border-secondary-100 focus:bg-green-50 focus:text-secondary-100 focus:outline-none"
+              placeholder="Tanyakan pertanyaanmu tentang event/lomba ini"
+            ></textarea>
+          </div>
+
+          <div class="mx-3">
+            <div class="text-right">
+              <button class="btn-primary btn-primary-transition">Kirim</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div
+        class="font-montserrat mx-auto rounded-xl border bg-white px-2 py-4 shadow-xl sm:px-5"
+      >
+        <div class="my-4">
+          <small class="ml-1 text-base font-bold text-gray-700"
+            >2 Komentar</small
+          >
+          <div class="mt-4 flex flex-col">
+            <div class="mx-auto flex flex-row justify-between px-1 py-1">
+              <div class="mr-2 flex">
+                <div class="mx-auto h-12 w-12 items-center justify-center">
+                  <img
+                    alt="profil"
+                    src="https://images.unsplash.com/photo-1619380061814-58f03707f082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fG1hbiUyMGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    class="mx-auto h-12 w-12 rounded-full object-cover"
+                  />
+                </div>
+              </div>
+              <div class="flex-1 pl-1">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <p class="text-base font-semibold text-gray-600">
+                      Timothy R. Arrieta
+                    </p>
+                    <p class="text-xs font-normal text-gray-500">
+                      - Feb 11, 2022
+                    </p>
+                  </div>
+                  <div class="text-sm text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat voluptate optio voluptatibus fuga pariatur ipsam
+                    excepturi tenetur quia nam deleniti.
+                  </div>
+                  <div class="mt-1 flex items-center space-x-3 text-sm">
+                    <a
+                      class="flex items-center text-secondary-100 hover:text-secondary-200"
+                      data-bs-toggle="collapse"
+                      href="#reply_diskusi"
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="reply_diskusi"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="mr-1 h-4 w-4"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      Balas Diskusi
+                    </a>
+                  </div>
+                </div>
+                <div class="collapse" id="reply_diskusi">
+                  <form action="#" class="my-2">
+                    <div class="font-montserrat rounded-xl">
+                      <div class="w-full">
+                        <textarea
+                          rows="3"
+                          class="w-full rounded-xl border p-2 text-sm focus:border-secondary-100 focus:bg-green-50 focus:text-secondary-100 focus:outline-none"
+                          placeholder="Balas diskusi tentang event/lomba ini"
+                        ></textarea>
+                      </div>
+
+                      <div class="">
+                        <div class="text-right">
+                          <button class="btn-primary btn-primary-transition">
+                            Balas
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- balasan komen -->
+                <div class="mx-auto mt-4 flex flex-row justify-between">
+                  <div class="mr-2 flex">
+                    <div class="mx-auto h-10 w-10 items-center justify-center">
+                      <img
+                        alt="profil"
+                        src="https://images.unsplash.com/photo-1604238473951-bf1492b379f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHdvbWVuJTIwYXNpYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                        class="mx-auto h-10 w-10 rounded-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <div
+                      class="mb-1 flex flex-wrap items-center sm:mb-0 sm:gap-2"
+                    >
+                      <p class="text-base font-semibold text-gray-600">
+                        Jordan Kimmy
+                      </p>
+                      <p class="text-xs font-normal text-gray-500">
+                        - 1 Jam yang lalu
+                      </p>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </div>
+                </div>
+                <!-- balasan komen -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- comment section -->
+    <%- include('layout/footer') %>
+    <script src="/js/detail_event.min.js" type="module"></script>
+  </body>
+</html>

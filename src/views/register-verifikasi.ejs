@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('layout/header') %>
+    <title>Verifikasi Register</title>
+  </head>
+  <body class="debug-screens">
+    <%- include('layout/login-header') %>
+
+    <div
+      class="font-montserrat relative grid h-screen grid-cols-1 items-center justify-center lg:grid-cols-3"
+    >
+      <div class="sizing-content col-span-2 mb-28 lg:mb-0">
+        <!-- header -->
+        <div class="mb-6 text-center">
+          <h1 class="text-header text-style-header mb-2 text-3xl">
+            Verifikasi
+          </h1>
+          <p class="text-sm">
+            Kami telah mengirimkan email verifikasi untuk mendaftarkan akun Anda
+            Silakan periksa email Anda dan klik tautan untuk melanjutkan
+          </p>
+        </div>
+        <!-- header -->
+
+        <div class="mb-4 flex items-center justify-center">
+          <img
+            src="icon/icon-sukses-2.svg"
+            alt="icon kirim"
+            class="h-44 sm:h-64"
+          />
+        </div>
+
+        <a
+          type="submit"
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="light"
+          class="bg-gradient-2 btn-login btn-login-transition mb-2"
+          href="/login"
+        >
+          Kembali ke halaman login
+        </a>
+
+        <div class="flex justify-center gap-2 text-sm">
+          <p>Belum mendapatkan email?</p>
+          <a href="/verifikasi-ulang" class="text-primary-100 hover:font-bold"
+            >Kirim Ulang</a
+          >
+        </div>
+      </div>
+      <%- include('layout/login-side') %>
+    </div>
+    <%- include('layout/login-footer') %>
+  </body>
+</html>
